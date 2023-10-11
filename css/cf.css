@@ -1,26 +1,25 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-.main-body{
-    position: absolute;
+.main-body {
     border: 1px solid #629614;
     padding: 20px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background: gray;
     border-radius: 10px;
     text-align: center;
     box-shadow: 10px 10px 10px #62961485;
+    width: 30%;
+    margin-left: 35%;
 }
 
-h3{
+h3 {
     color: rgb(39, 54, 3);
     text-align: center;
     margin: 15px 30px;
 }
-button{
+
+button {
     color: white;
     background: black;
     border: 1px solid;
@@ -28,7 +27,7 @@ button{
     padding: 10px 15px;
 }
 
-input{
+input {
     outline: none;
     padding: 10px;
     border: 1px dashed black;
@@ -37,20 +36,40 @@ input{
     color: aliceblue;
 }
 
-label{
+label {
     font-weight: 700;
     color: rgb(56, 30, 5);
 }
 
-#error{
+#error {
     color: red;
     text-align: center;
     font-weight: 600;
 }
 
-form div{
+form div {
     margin-bottom: 10px;
 }
 
+.Ftable,th,td {
+    border: 1px solid black;
+    text-align: center;
 
+}
 
+.Ftable th span {
+    color: #ff0000;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.Ftable th {
+    color: #0026ff;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.Ftable{
+    margin-left: 20%;
+    width: 50%;
+}

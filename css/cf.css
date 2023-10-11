@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+}
+
+.main-body{
+    position: absolute;
+    border: 1px solid #629614;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: gray;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 10px 10px 10px #62961485;
+}
+
+h3{
+    color: rgb(39, 54, 3);
+    text-align: center;
+    margin: 15px 30px;
+}
+button{
+    color: white;
+    background: black;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+
+input{
+    outline: none;
+    padding: 10px;
+    border: 1px dashed black;
+    background: blue;
+    border-radius: 15px;
+    color: aliceblue;
+}
+
+label{
+    font-weight: 700;
+    color: rgb(56, 30, 5);
+}
+
+#error{
+    color: red;
+    text-align: center;
+    font-weight: 600;
+}
+
+form div{
+    margin-bottom: 10px;
+}
+
+
+

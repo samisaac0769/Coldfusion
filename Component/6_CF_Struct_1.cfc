@@ -4,7 +4,6 @@
         <cfargument name="value">
                  
         <cfset local.struct = StructNew()>
-
         <cfset local.struct["#arguments.key#"] = arguments.value>
         <cfreturn local.struct>  
     </cffunction>

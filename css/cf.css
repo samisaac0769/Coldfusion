@@ -51,7 +51,7 @@ form div {
     margin-bottom: 10px;
 }
 
-.Ftable,th,td {
+table,th,td {
     border: 1px solid black;
     text-align: center;
 

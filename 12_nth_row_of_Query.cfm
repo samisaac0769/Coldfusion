@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8</title>
+    <title>12</title>  
     <link href="css/cf.css" rel="stylesheet">
 
 </head>
@@ -23,29 +23,61 @@
         <form action="" method="post">
             <input type="number" placeholder="enter the number" name="nthplace">
             <button>Get the Date</button>
-        </from><br><br>
+            </from><br><br>
             <cfquery datasource="MyColdfusiontask" name="namelist">
                 SELECT * FROM namelist;
             </cfquery>
-            <cfoutput query="namelist">
-                #FirstName# #LastName#<br>
-            </cfoutput>
+            <table>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+                <tr style="border:1px solid">Data from DB</tr>
+                <cfoutput query="namelist">
+                    <tr>
+                        <td>#FirstName#</td>
+                        <td>#LastName#</td>
+                    </tr>
+                </cfoutput>
+            </table>
             <br><br>
-    
-        <cfif isDefined("form.nthplace")>
-            <cfif #form.nthplace# eq "">
-                <span> dai enter the value da</span>
-            <cfelse>
-                <cfquery datasource="MyColdfusiontask" name="namelist1">
-                    SELECT * FROM namelist ORDER BY (SELECT NULL) OFFSET #form.nthplace# -1 ROWS fetch next 1 row only;
-                </cfquery>
-                    <cfif namelist1.recordCount GT 0>
-                        <cfoutput query="namelist1">The Answer is : #FirstName# #LastName#<br></cfoutput>
+
+            <cfif isDefined("form.nthplace")>
+                <cfif #form.nthplace# eq "">
+                    <span> dai enter the value da</span>
                     <cfelse>
-                        <cfoutput>The query did not return results.</cfoutput>
-                    </cfif>
+                        <cfquery datasource="MyColdfusiontask" name="namelist1">
+                            SELECT * FROM namelist ORDER BY (SELECT NULL) OFFSET #form.nthplace# -1 ROWS fetch next 1
+                            row only;
+                        </cfquery>
+                        <cfif namelist1.recordCount GT 0>
+                            
+                                <table>
+                                    <tr style="border:1px solid">The Answer is</tr>
+                                    <tr>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                    </tr>
+                                    <cfoutput query="namelist1">
+                                    <tr>
+                                        
+                                        <td>#FirstName#</td>
+                                        <td>#LastName#</td>
+                                        
+                                    </tr>
+                                    </cfoutput>
+                                </table>
+                            
+                            <cfelse>
+                                <cfoutput >The query did not return results.</cfoutput>    
+                                
+                        </cfif>
+                </cfif>
             </cfif>
-        </cfif>
     </center>
+
+
+
 </body>
+
 </html>

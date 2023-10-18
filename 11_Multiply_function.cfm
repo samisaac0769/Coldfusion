@@ -45,7 +45,7 @@
 
 
     <cffunction name="mulitiply" access="public" returntype="numeric">
-
+        <cfargument name="agrument1" default="1">
         <cfset result=1>
             <cfset values=arguments>
                 <cfloop index="i" from="1" to="#values.count()#">

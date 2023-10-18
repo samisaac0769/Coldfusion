@@ -52,13 +52,13 @@
             <cfset inputvalue=form.grade>
                 <cfif inputvalue eq 5>
                     <h2 style="color:green;">Your Grade is Very good</h2>
-                    <cfelseif inputvalue eq 4>
-                        <h2>Your Grade is good</h2>
-                        <cfelseif inputvalue eq 3>
-                            <h2>Your Grade is fair</h2>
-                            <cfelseif inputvalue eq 2 || inputvalue eq 1>
+                <cfelseif inputvalue eq 4>
+                    <h2>Your Grade is good</h2>
+                <cfelseif inputvalue eq 3>
+                    <h2>Your Grade is fair</h2>
+                <cfelseif inputvalue eq 2 || inputvalue eq 1>
                                 <h2>Your Grade is Ok.</h2>
-                                <cfelse>
+                <cfelse>
                                     <h2>You entered the wrong Input</h2>
                 </cfif>
         </cfif>

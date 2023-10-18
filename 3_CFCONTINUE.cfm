@@ -26,13 +26,13 @@
         <cfif isDefined("form.values")>
             <cfset inputValues=form.values>
 
-                <cfset valuesArray=listToArray(inputValues, "," )>
-                    <cfloop array="#valuesArray#" index="value">
-                        <cfset modulusResult=value % 3>
-                            <cfif modulusResult eq 0>
-                                <cfoutput> #value#, </cfoutput>
-                            </cfif>
-                    </cfloop>
+            <cfset valuesArray=listToArray(inputValues, "," )>
+            <cfloop array="#valuesArray#" index="value">
+                <cfset modulusResult=value % 3>
+                <cfif modulusResult eq 0>
+                    <cfoutput> #value#, </cfoutput>
+                </cfif>
+            </cfloop>
         </cfif>
 
     </div>

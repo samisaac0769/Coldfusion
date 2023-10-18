@@ -73,3 +73,7 @@ table,th,td {
     margin-left: 20%;
     width: 50%;
 }
+
+.important, .error{
+    color:red;
+}

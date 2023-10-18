@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <title>14</title>
     <link href="css/cf.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/14.js"></script>
 </head>
 <body>
     <div style="text-align:center">
@@ -17,19 +18,40 @@ While clicking on the image name, it should redirect the user to details page wh
             ---------------------------------------------------------</p>
     </div>
     <center>
-        <form id="imageUploadForm" action="" method="post" onsubmit="validate()">
-            <label for="imageName">Image Name:</label>
-            <input type="text" id="imageName" name="imageName" required><br>
+        <form action="14_Upload_validation_and_Image_function.cfm" method="post" onsubmit="return validate()"  enctype="multipart/form-data">
+            <label for="imageName"><span class="important">*</span>Image Name:</label>
+            <input type="text" id="imageName" name="imageName"><br>
 
-            <label for="description">Description:</label>
+            <label for="description"><span class="important">*</span>Description:</label>
             <textarea id="description" name="description" rows="2" cols="20"></textarea><br>
 
-            <label for="imageFile">Image Upload</label>
-            <input type="file" id="imageFile" name="imageFile" accept=".jpg, .jpeg, .png, .gif" required><br>
-
+            <label for="imageFile"><span class="important">*</span>Image Upload</label>
+            <input type="file" id="imageFile" name="imageFile" accept=".jpg, .jpeg, .png, .gif" onchange="check()">
             <input type="submit" value="Upload Image">
+            <p id="filerror" class="error" ></p>
         </form>
+
+        <cfif isDefined("form.imageName") and isDefined("form.description") and isDefined("form.imageFile")>
+            <cfset local.path = "C:\ColdFusion2023\cfusion\wwwroot\Coldfusion\assets">
+
+
+            <cfif structKeyExists(form, "imageFile")>
+            <cffile action = "upload" 
+            fileField = "form.imageFile" 
+            destination =  "#local.path#"
+            nameConflict = "MakeUnique"
+            allowedextensions=".jpg, .jpeg, .png, .gif" >
+
+            <cfset local.fullpath = local.path & "\" & cffile.serverFile>
+            <cfquery datasource="MyColdfusiontask" name="list">
+                insert into imglist (imgname , discreption, imgpath) values('#form.imageName#', '#form.description#', '#local.fullpath#');
+            </cfquery>
+            </cfif>
+            <cflocation url="14_process_thumnail.cfm" addtoken="no">
+        </cfif>
+
+        
+
     </center>
-    <script src="js/14.js"></script>
 </body>
 </html>

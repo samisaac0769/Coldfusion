@@ -77,3 +77,18 @@ table,th,td {
 .important, .error{
     color:red;
 }
+
+.img-btn{
+    border: none;
+    outline: none;
+    background:none !important;
+}
+
+.img-btn:hover{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}

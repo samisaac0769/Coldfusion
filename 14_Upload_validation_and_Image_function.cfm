@@ -31,9 +31,8 @@ While clicking on the image name, it should redirect the user to details page wh
             <p id="filerror" class="error" ></p>
         </form>
 
-        <cfif isDefined("form.imageName") and isDefined("form.description") and isDefined("form.imageFile")>
-            <cfset local.path = "C:\ColdFusion2023\cfusion\wwwroot\Coldfusion\assets">
-
+        <cfif structKeyExists(form, "imageName") and structKeyExists(form, "description") and structKeyExists(form, "imageFile")>
+            <cfset local.path = ExpandPath("/Coldfusion/assets")>
 
             <cfif structKeyExists(form, "imageFile")>
             <cffile action = "upload" 
@@ -42,16 +41,14 @@ While clicking on the image name, it should redirect the user to details page wh
             nameConflict = "MakeUnique"
             allowedextensions=".jpg, .jpeg, .png, .gif" >
 
-            <cfset local.fullpath = local.path & "\" & cffile.serverFile>
+            <cfset local.image = cffile.clientFile>
+
             <cfquery datasource="MyColdfusiontask" name="list">
-                insert into imglist (imgname , discreption, imgpath) values('#form.imageName#', '#form.description#', '#local.fullpath#');
+                insert into imglist (imgname , discreption, imgpath) values('#form.imageName#', '#form.description#', '#local.image#');
             </cfquery>
             </cfif>
             <cflocation url="14_process_thumnail.cfm" addtoken="no">
         </cfif>
-
-        
-
     </center>
 </body>
 </html>

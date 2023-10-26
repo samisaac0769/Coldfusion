@@ -1,0 +1,9 @@
+<cfif len(ipmail) eq 0>
+    <p style="color: red;">Enter the mail id</p>
+    <cfelseif reFind("^\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b$", arguments.ipmail) eq 0>
+        <p style="color: red;">The email id is invalid</p>
+</cfif>
+
+
+        <cfif len(ipchaptcha) eq 0>
+            <p style="color: red;">Enter the captcha</p>

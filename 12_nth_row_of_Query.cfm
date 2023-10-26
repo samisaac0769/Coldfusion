@@ -47,7 +47,7 @@
                     <span> dai enter the value da</span>
                     <cfelse>
                         <cfquery datasource="MyColdfusiontask" name="namelist1">
-                            SELECT * FROM namelist ORDER BY (SELECT NULL) OFFSET #form.nthplace# -1 ROWS fetch next 1
+                            SELECT * FROM namelist ORDER BY (SELECT NULL) OFFSET <cfqueryparam value="#form.nthplace#" cfsqltype="cf_sql_integer">-1 ROWS fetch next 1
                             row only;
                         </cfquery>
                         <cfif namelist1.recordCount GT 0>

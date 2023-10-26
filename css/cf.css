@@ -92,3 +92,10 @@ a{
     text-decoration: none;
     color: white;
 }
+
+.captcha img{
+    padding: 1px;
+    border: 1px solid blueviolet;
+    border-radius: 10px;
+    height: 100%;
+}

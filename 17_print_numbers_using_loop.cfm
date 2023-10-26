@@ -10,7 +10,10 @@
 
 <body>
     <div style="text-align:center;">
-        Create a page with a text box & submit button. Users can enter a numeric value in the text box & click the submit button. If the user entered a non-numeric character, the page should validate the user input using JS. While clicking on the submit button, the page should show numbers from 1 to the given input number, with odd numbers in blue and even numbers in green.
+        Create a page with a text box & submit button. Users can enter a numeric value in the text box & click the submit button.
+         If the user entered a non-numeric character, the page should validate the user input using JS. 
+         While clicking on the submit button, the page should show numbers from 1 to the given input number,
+         with odd numbers in blue and even numbers in green.
 
     </div><br><br>
     <center>

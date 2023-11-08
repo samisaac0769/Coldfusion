@@ -3,6 +3,7 @@
     <cfset this.applicationTimeout = createTimeSpan(0, 0, 0, 60)> 
     <cfset this.sessionManagement = true> 
     <cfset this.sessionTimeout = createTimeSpan(0, 0, 2, 0)> 
+    
     <cffunction name="onApplicationStart" returnType="void">
 
     </cffunction>

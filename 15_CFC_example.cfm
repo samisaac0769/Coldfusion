@@ -36,7 +36,7 @@
                     <cfoutput>#local.ans1#</cfoutput>
                 </td>
             </tr>
-
+ 
 
             <tr>
                 <td>multiply(1,2,3)</td>

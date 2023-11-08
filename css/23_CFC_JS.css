@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+    letter-spacing: .01em;
+
+}
+
+.question {
+    color: rgb(87, 21, 148);
+}
+
+a {
+    color: blue;
+}
+
+.error,
+.import {
+    color: red;
+}
+
+body {
+    background-image: none;
+    background-color: #669900;
+}
+
+.main-card {
+    text-align: center;
+    margin: 10px auto;
+    width: 640px;
+    border: 1px solid;
+    background-color: white;
+}
+
+.icon {
+    background-color: #99cc00;
+    text-align: left;
+    height: 80px;
+}
+
+.formstart {
+
+    text-align: left;
+    padding: 20px;
+}
+
+header,
+.fsection {
+    border-bottom: 1px dotted #CCCCCC;
+}
+
+h2 {
+    font-size: 20px !important;
+    font-weight: normal;
+}
+
+header p {
+    font-size: 12.35px;
+    color: #444444 !important;
+    margin-bottom: 10px;
+}
+
+form {
+    text-align: left;
+    padding-top: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 5px;
+    padding: 5px 10px;
+}
+
+
+label {
+    font-size: 12.35px;
+    color: #444444;
+    font-weight: bold;
+}
+
+.field {
+    outline: none;
+    padding: 1px;
+}
+
+.radio-input {
+    color: #444444;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+}
+
+.d-flex {
+    display: flex;
+    gap: 8px;
+}
+
+.flx-col {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    outline: none;
+    text-align: center;
+}
+
+
+.flx-col .mm,.dd,
+.Cents {
+    width: 19px;
+    padding: 0 5px;
+}
+
+.flx-col span {
+    font-size: 11px;
+    color: #444444;
+    text-align: center;
+}
+
+.flx-col .yyyy {
+    width: 35px;
+    padding: 0 5px
+}
+
+.Dollars {
+    width: 45px;
+    padding: 0 5px
+}
+
+.CALANDER {
+    background: url(../assets/calendar.png) no-repeat;
+    border: 0px solid #444444;
+    height: 17PX;
+    width: 17px;
+    color: transparent;
+    padding-left: 4px;
+    font-size: 20px;
+}
+
+li:hover {
+    background: #eff31265;
+}
+
+.Portfolio input {
+    width: 400px;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.exception {
+    font-size: 10px;
+    color: #444444;
+    padding-left: 10px;
+}
+
+.no-spinners {
+    &::-webkit-inner-spin-button {
+        display: none;
+
+    }
+}
+
+h3 {
+    font-size: 14px !important;
+    font-weight: normal;
+}
+
+#merror,#derror,#yerror,#salaryerror,#fNameerror,#lNameerror,#imperror,#mailerror,#perror,#centerror,#porterror,#error
+
+{
+    color: red;
+    font-size: 11px;
+}
+
+button{
+    padding: 5px 10px;
+    outline: none;
+}

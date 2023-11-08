@@ -18,17 +18,12 @@
     <center>
         <form action="19_CF_Cookie.cfm" method="post">
             <button name="submit" >Visits Counter</button>
-            <button name="clear" >Clear</button>
-            
-            
         </form>
 
         <cfif structKeyExists(form, "submit")>
-        <cfinvoke component="Component/19_CF_Cookie" method="cookieCount" returnvariable="result"></cfinvoke>
-        <cfoutput><br>The number of times the page get visit is : #result#</cfoutput>
+            <cfinvoke component="Component/19_CF_Cookie" method="cookieCount" returnvariable="result"></cfinvoke>
+            <cfoutput><br>The number of times the page get visit is : #result#</cfoutput>
         </cfif>
-
-        
 
     </center>
     </body>

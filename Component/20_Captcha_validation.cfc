@@ -5,19 +5,15 @@
         <cfargument name="ipchaptcha">
 
         <cfset local.error = "">
-
         <cfif len(ipmail) eq 0>
             <cfset local.error = "mailempty">
             <cfreturn local.error>
-
         <cfelseif len(ipchaptcha) eq 0>
             <cfset local.error = "captchaempty">
             <cfreturn local.error>
-
         <cfelseif reFind("^\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b$", arguments.ipmail) eq 0>
             <cfset local.error = "invalidmailid">
             <cfreturn local.error>
-
         <cfelse>
             <cfset local.captchaMatch = false>
             <cfloop from=1 to="#arrayLen(session.captcha)#" index="i">

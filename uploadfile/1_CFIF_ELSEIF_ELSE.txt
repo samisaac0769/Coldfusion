@@ -1,0 +1,4 @@
+Create a page with text box & submit button. Input for the text box is any number between 1 to 5. 
+JS validation should be there to validate the user input. Based upon the user input, you should show 
+the corresponding string. 5 is Very good. 4 is good. 3 is fair. 1 & 2 is Ok. 
+Use cfif, cfelseif,cfelse to do this functionality.

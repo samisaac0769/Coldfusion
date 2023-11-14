@@ -29,10 +29,11 @@
                     <input type="checkbox" id="checkbox" >
                 </div>
                 <p id="error"></p>
-                <button id="submitbtn">Submit</button>
+                <button type="button" id="submitbtn">Submit</button>
+                <p class="success"></p>
             </form>
         </div>
-        <div></div>
+        
     </center>
 </body>
 </html>

@@ -35,8 +35,19 @@ $(document).ready(function () {
     $('#checkbox').on("click", function () {
         let mail = $("#mymail").val();
         let name = $("#myname").val();
-        if ($(this).is(':checked')) {
-            alert("success");
+        const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,3}$/;
+
+        if (mail == "") {
+            $("#checkbox").prop("checked", false);
+            $("#error").text("Must enter the mail id");
+        }
+        else if (!emailPattern.test(mail)) {
+            $("#checkbox").prop("checked", false);
+            $('#error').text("Invalid Mail Id");
+            
+        }
+        else if ($(this).is(':checked')) {
+            
             $.ajax({
                 url: "Component/24_Ajax_validation.cfc?method=api",
                 type: "post", 
@@ -46,14 +57,15 @@ $(document).ready(function () {
                 },
                 success: function (data) {
                     var retval = $(data).find("string").text();
-
+                    console.log(retval);
                     if (retval == 1) {
+
                         $("#checkbox").prop("checked", false);
                         $("#error").text("The subscribe is aleady exist in this mail id. Change the mail id...");
-
                     }
                     else {
                         document.getElementById("submitbtn").removeAttribute('disabled');
+                        $("#submitbtn").css({ "background-color": "green", "color": "black" })
                     }
                 }
             });
@@ -82,16 +94,17 @@ $(document).ready(function () {
                     mymail: mail
                 },
                 success: function (data) {
-                    // var retval = $(data).find("string").text();
 
-                    // if (retval == 1) {
-                    //     $("#checkbox").prop("checked", false);
-                    //     $("#error").text("The subscribe is aleady exist in this mail id. Change the mail id...");
-
-                    // }
-                    // else {
-                    //     document.getElementById("submitbtn").removeAttribute('disabled');
-                    // }
+                    
+                    var retval = $(data).find("string").text();
+                    if (retval == 1) {
+                        location.reload(true);
+                        alert("The subscribe is submited. Now you will receive the mail every week");
+                        
+                    }
+                    else {
+                        $('#error').text("Something went wrong");
+                    }
                 }
             });
         }

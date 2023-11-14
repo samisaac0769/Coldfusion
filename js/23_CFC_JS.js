@@ -248,6 +248,27 @@ function validationform() {
 
 $(document).ready(function () {
     $("#Portfolio").val("http://");
+
+    $("#datepicker").datepicker({
+        dateFormat: 'yy-mm-dd',
+        showButtonPanel: true,
+        changeMonth: true,
+        changeYear: true,
+        onSelect: function (dateText, inst) {
+            // Parse the selected date
+            var selectedDate = new Date(dateText);
+
+            // Format MM, DD, YYYY with leading zeros
+            var month = ('0' + (selectedDate.getMonth() + 1)).slice(-2); // Months are zero-based
+            var day = ('0' + selectedDate.getDate()).slice(-2);
+            var year = selectedDate.getFullYear();
+
+            // Update MM, DD, YYYY fields
+            $("#mm").val(month);
+            $("#dd").val(day);
+            $("#yyyy").val(year);
+        }
+    });
 });
 
 

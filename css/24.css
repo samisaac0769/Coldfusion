@@ -8,8 +8,8 @@ form div{
 
 button{
     padding: 10px 20px;
-    background-color: blueviolet;
-    color: aqua;
+    background-color: rgb(226, 43, 43);
+    color: rgb(238, 255, 0);
     outline: none;
     border: none;
 }
@@ -17,4 +17,8 @@ button{
 #error{
     color: red;
     font-size: 15px;
+}
+
+.success{
+    color: green;
 }

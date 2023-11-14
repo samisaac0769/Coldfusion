@@ -1,0 +1,5 @@
+Create a subscribe form with first name, Email id text boxes.Near email id text box, check button should be there.
+Below these text boxes submit button should be there. By default submit button should be disabled. 
+While clicking that, check mail id in Database using Ajax. If user entered mail id there, then give error message
+like "Mail id is already there". If not, enable submit button.
+While click on the submit button it will insert first name & email id in to database.

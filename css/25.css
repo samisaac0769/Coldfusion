@@ -1,0 +1,69 @@
+.size10{
+    font-size:40px;
+    color:rgb(255, 187, 0);
+}
+
+.size9 {
+    font-size: 36px;
+    color: rgb(255, 30, 0);
+}
+.size8 {
+    font-size: 33px;
+    color: rgb(255, 230, 0);
+}
+.size7{
+    font-size: 30px;
+    color: rgb(72, 255, 0);
+}
+.size6 {
+    font-size: 28px;
+    color: rgb(0, 255, 106);
+}
+.size5 {
+    font-size: 25px;
+    color: rgb(0, 238, 255);
+}
+.size4 {
+    font-size: 22px;
+    color: rgb(0, 102, 255);
+}
+.size3 {
+    font-size: 20px;
+    color: rgb(4, 0, 255);
+}
+.size2 {
+    font-size: 18px;
+    color: rgb(111, 0, 255);
+}
+.size1 {
+    font-size: 15px;
+    color: rgb(255, 0, 157);
+}
+
+table {
+    background-color: black;
+    border: 1px solid red;
+    width: 25%;
+    color: white;
+}
+
+table tr th {
+    border: 1px solid blue;
+    color: white;
+    height: 30px;
+    font-size: 20px;
+}
+
+table tr td {
+    border: 1px solid green;
+    text-align: center;
+    height: 30px;
+}
+
+.btn {
+    background-color: #0074d9;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,6 @@
+ColdFusion Structure
+--------------------
+
+Create a web page that will have two text boxes and a submit button. When submitted, the page will post to self
+
+Create a structure in ColdFusion with the values from the text box. The text entered in text box one is the key, and the text entered in text box 2 is the value. CFDUMP the structure.

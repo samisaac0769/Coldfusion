@@ -17,6 +17,8 @@
         <cfset session.struct4 = StructNew()>
         <cfset session.struct5 = StructNew()>
         <cfset session.captcha = []>
+        <cfset session.wordCount = StructNew()> 
+        <cfset session.currentURL ="">
 
         <cfreturn true>
     </cffunction>    
@@ -35,5 +37,6 @@
         <cfset StructClear(session.struct3)>
         <cfset StructClear(session.struct4)>
         <cfset StructClear(session.captcha)>
+        <cfset StructClear(session.wordCount)>
     </cffunction>
 </cfcomponent>

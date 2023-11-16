@@ -44,10 +44,10 @@
     </cffunction>
 
     <cffunction  name="userdata">
-        <cfquery datasource="MyColdfusiontask" name="userdata">
+        <cfquery datasource="MyColdfusiontask" name="qryUserData">
             select *from page
         </cfquery>
-        <cfreturn userdata>
+        <cfreturn qryUserData>
     </cffunction>
 
     <cffunction  name="logout">
@@ -55,25 +55,63 @@
         <cflocation  url="28_Simple_CMS.cfm">
     </cffunction>
     
-    <cffunction  name="add" returntype="any" access="public">
-        <cfargument  name="pagename">
-        <cfargument  name="discription">
-        <cfset cleanedPagename = trim(arguments.pagename)>
-        <cfset cleanedDiscription = trim(arguments.discription)>
-        <cfif len(cleanedPagename) gt 0 and len(cleanedDiscription) gt 0>
-            <cfquery datasource="MyColdfusiontask" name="adding">
+    <cffunction  name="add" returntype="any" access="remote">
+        <cfargument  name="namepage" type="string" required="true">
+        <cfargument  name="discriptionpage" type="string" required="true">
+        <cfset local.cleanedPagename = trim(arguments.namepage)>
+        <cfset local.cleanedDiscription = trim(arguments.discriptionpage)>
+
+        <cfset local.result = "false">
+        <cfif len(local.cleanedPagename) gt 0 and len(local.cleanedDiscription) gt 0>
+            <cfquery datasource="MyColdfusiontask" name="qryAdding">
                 INSERT INTO page (pagename, pagediscription) VALUES
                 (
-                    <cfqueryparam value="#cleanedPagename#" cfsqltype="cf_sql_varchar">,
-                    <cfqueryparam value="#cleanedDiscription#" cfsqltype="cf_sql_varchar">
+                    <cfqueryparam value="#local.cleanedPagename#" cfsqltype="cf_sql_varchar">,
+                    <cfqueryparam value="#local.cleanedDiscription#" cfsqltype="cf_sql_varchar">
                 )
             </cfquery>
+            <cfset local.result = "true">
+        </cfif>
+        <cfreturn local.result>
+    </cffunction>
+
+    <cffunction  name="getPageById" access="remote" returnformat="json">
+        <cfargument  name="pageId" type="numeric" required="true">
+        <cfquery datasource="MyColdfusiontask" name="qryGetPage"> 
+            select pagename, pagediscription from page where pageid = <cfqueryparam value="#arguments.pageId#" cfsqltype="cf_sql_integer">
+        </cfquery>
+        <cfreturn serializeJSON(qryGetPage)>
+    </cffunction>
+
+    <cffunction  name="update" access="remote" returntype="boolean">
+        <cfargument  name="pageId" type="numeric" required="true">
+        <cfargument  name="pagename" type="string" required="true">
+        <cfargument  name="pagedescription" type="string" required="true">
+
+        <cfquery name="qryForUpdate" result="pageUpdate">
+            UPDATE page SET pagename =<cfqueryparam value="#arguments.pagename#" cfsqltype="cf_sql_varchar">,
+                pagediscription =<cfqueryparam value="#arguments.pagedescription#" cfsqltype="cf_sql_varchar"> 
+                WHERE pageid = <cfqueryparam value="#arguments.pageId#" cfsqltype="cf_sql_integer">
+        </cfquery>
+
+        <cfif pageUpdate.recordcount>
+            <cfreturn 1>
+        <cfelse>
+            <cfreturn 0>
         </cfif>
         
-        <cfif isDefined("adding")and adding.recordcount gt 0>
-            <cfreturn true>      
-        <cfelse>    
-            <cfreturn false>
+    </cffunction>
+
+    <cffunction  name="delete" access="remote" returntype="boolean" >
+        <cfargument  name="pageId" type="numeric" required="true">
+        <cfquery name="qryDelete" result="pageDelete">
+            DELETE FROM page WHERE pageid = <cfqueryparam value="#arguments.pageId#" cfsqltype="cf_sql_integer">
+        </cfquery>
+
+        <cfif pageDelete.recordcount>
+            <cfreturn 1>
+        <cfelse>
+            <cfreturn 0>
         </cfif>
     </cffunction>
 </cfcomponent>

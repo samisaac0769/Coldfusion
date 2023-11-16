@@ -40,9 +40,6 @@
             <cfelse>
                 <cflocation  url="26_CF_DB_WordCount_2.cfm">
             </cfif>
-        
-            
-            
         </cfif>
     </center>
 </body>

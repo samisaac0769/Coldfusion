@@ -22,7 +22,7 @@
                 <button class="logout">LogOut</button>
             </a>--->
             <form action="28_user.cfm" method="post">
-                <input class="logout" type="submit" name="logout">
+                <input class="logout" type="submit" name="logout" value="Logout">
             </form>
             <cfif structKeyExists(form, "logout")>
                 <cfset data = comp.logout()>

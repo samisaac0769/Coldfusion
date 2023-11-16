@@ -18,14 +18,12 @@ table {
 .container {
     display: flex;
     justify-content: center;
-    height: 100vh;
     text-align: center;
     /* Optional: Adjust based on your layout */
 }
 
 .admin-list {
     border: 1px solid;
-    width: 75%;
     text-align: center;
     margin-top: 90px;
 }
@@ -71,29 +69,72 @@ table {
     border: none;
 }
 
-.new-form{
+.new-form {
     text-align: center;
 }
 
-form{
+form {
     padding: 20px;
 }
-form div{
-   margin: 20px; 
+
+form div {
+    margin: 20px;
 }
 
-form div input{
+form div input {
     padding: 5px;
     margin-left: 5px;
 }
 
-form div button{
+form div button {
     padding: 5px 10px;
     border: none;
 
 }
-
-.error{
+.title{
+    color: red;
+}
+.error {
     color: red;
     font-size: 15px;
+}
+
+.admin-table {
+    width: 75%;
+    border-collapse: collapse;
+    margin: 20px 0 20px 0;
+}
+
+.admin-table th,
+.admin-table td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+}
+
+.admin-table button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 2px 2px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.admin-table button i {
+    margin-right: 5px;
+    margin-left: 5PX;
+}
+
+.admin-table button.edit-btn {
+    background-color: #4CAF50;
+}
+
+.admin-table button.delete-btn {
+    background-color: #f44336;
 }

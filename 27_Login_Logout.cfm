@@ -3,26 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>27</title>
-    <style>
-    .error{
-        color:red;
-        font-size:15px;
-        text-align:center;
-    }
-    h3{
-        color:red;
-    }
-        input{
-            padding:5px;
-        }
-        form div{
-            margin:10px;
-        }
-        form{
-            margin-top:100px;
-            text-align:center;
-        }
-    </style>
+    <link href="css/27.css" rel="stylesheet">
 </head>
 <body>
     <center>

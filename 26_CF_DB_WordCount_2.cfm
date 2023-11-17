@@ -21,10 +21,10 @@
                     <table>
                         <tr><th>Word</th><th>Count</th></tr>
                         <cfloop collection="#result#" item="word">
-                            <cfset wordCount = structFind(result, word)>
+                            <cfset local.wordCount = structFind(result, word)>
                             <tr>
                                 <td>#word#</td>
-                                <td>#wordCount#</td>
+                                <td>#local.wordCount#</td>
                             </tr>
                         </cfloop>
                     </table>

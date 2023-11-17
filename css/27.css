@@ -1,0 +1,33 @@
+.error {
+    color: red;
+    font-size: 15px;
+    text-align: center;
+}
+
+h3 {
+    color: red;
+}
+
+input {
+    padding: 5px;
+}
+
+form div {
+    margin: 10px;
+}
+
+form {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.card {
+    text-align: center;
+    border: 1px solid black;
+    background: blue;
+    padding: 20px;
+    width: 25%;
+    margin-left: 35%;
+    color: yellow;
+    font-size: 30px;
+}

@@ -5,18 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Welcome</title>
-        <style>
-            .card{
-                text-align:center;
-                border:1px solid black;
-                background:blue;
-                padding:20px;
-                width: 25%;
-                margin-left: 35%;
-                color: yellow;
-                font-size: 30px;
-            }
-        </style>
+        <link href="css/27.css" rel="stylesheet">
     </head>
     <body>
 

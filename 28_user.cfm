@@ -17,7 +17,7 @@
 
         <cfif session.CMSvalidated>
             <cfset comp = createObject("Component","Component/28_Simple_CMS")>
-            <cfset data = comp.userdata()>
+            <cfset local.data = comp.userdata()>
             <!---<a href="28_Simple_CMS.cfm">
                 <button class="logout">LogOut</button>
             </a>--->
@@ -25,7 +25,7 @@
                 <input class="logout" type="submit" name="logout" value="Logout">
             </form>
             <cfif structKeyExists(form, "logout")>
-                <cfset data = comp.logout()>
+                <cfset local.data = comp.logout()>
             </cfif>
             <div class="container">
                 <cfoutput>
@@ -35,10 +35,10 @@
                             <th>Page Name</td>
                             <th>View</th>
                         </tr>
-                        <cfloop query = #data#>
+                        <cfloop query = #local.data#>
                             <tr>
-                                <td>#data.pageid#</td>
-                                <td>#data.pagename#</td>
+                                <td>#local.data.pageid#</td>
+                                <td>#local.data.pagename#</td>
                                 <td>
                                     <button class="view" type="button"  name="viewdis" data-toggle="modal" data-target="##myModal#data.pageid#">View</button>
                                     <div class="modal fade" id="myModal#data.pageid#" role="dialog">

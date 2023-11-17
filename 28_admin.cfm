@@ -19,13 +19,13 @@
         <cfparam name="session.CMSvalidated" default="false">
 
         <cfif session.CMSvalidated>
-            <cfset comp=createObject("Component","Component/28_Simple_CMS")>
+            <cfset local.comp=createObject("Component","Component/28_Simple_CMS")>
             <form action="28_admin.cfm" method="post">
             <input class="logout" type="submit" name="logout" value="Output" >
             </form>
 
             <cfif structKeyExists(form, "logout" )>
-                <cfset data=comp.logout()>
+                <cfset local.data= local.comp.logout()>
             </cfif>
             <div class="container">
                 <div class="admin-list">
@@ -58,8 +58,8 @@
                         </div>     
                     </div> 
                     <div class="page-list">
-                        <cfset comp = createObject("Component","Component/28_Simple_CMS")>
-                        <cfset data = comp.userdata()>
+                        
+                        <cfset local.data = local.comp.userdata()>
 
                         <div class="container">
                             <cfoutput>
@@ -68,10 +68,10 @@
                                         <th>Page</th>
                                         <th>Page Name</td>
                                     </tr>
-                                    <cfloop query = #data#>
+                                    <cfloop query = #local.data#>
                                         <tr>
-                                            <td id="pageid">#data.pageid#</td>
-                                            <td>#data.pagename#</td>
+                                            <td id="pageid">#local.data.pageid#</td>
+                                            <td>#local.data.pagename#</td>
                                             <td>
                                                 <button title="View" data-pageviewid="#data.pageid#" class="edit-btn view" ><i class="fa fa-eye" aria-hidden="true"></i></button>
                                                 <button title="Edit" data-page="#data.pageid#" class="edit-btn edit" ><i class="fa fa-pencil"></i></button>

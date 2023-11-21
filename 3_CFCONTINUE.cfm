@@ -23,7 +23,7 @@
             <button type="submit" id="submit">Submit</button>
         </form>
 
-        <cfif isDefined("form.values")>
+        <cfif structKeyExists(form, "values")>
             <cfset inputValues=form.values>
 
             <cfset valuesArray=listToArray(inputValues, "," )>

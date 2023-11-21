@@ -37,7 +37,7 @@ Tell him how many days are remaining for his & his mothers birthday.</h3>
             <p id="error"></p>
         </form>
 
-        <cfif IsDefined("form.mom") and IsDefined("form.son")>
+        <cfif StructKeyExists(form, "mom") and StructKeyExists(form, "son")>
              <cfinvoke component="Component/5_Age_calculator" method="at_what_age" returnvariable="atwhatage">
                 <cfinvokeargument name="momage" value="#form.mom#">    
                 <cfinvokeargument name="sonage" value="#form.son#">                 

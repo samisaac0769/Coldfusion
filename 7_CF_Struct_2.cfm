@@ -41,7 +41,7 @@
             </div>
             <button class="submitbtn" type="Submit" name="submitbtn">Submit</button>
 
-        <cfif IsDefined("form.key") and IsDefined("form.value")>
+        <cfif structKeyExists(form, "key") and structKeyExists(form, "value")>
             <cfinvoke component="Component/7_CF_Struct_2" method="methodkeyandvalue" returnvariable="keyandvalue">
                 <cfinvokeargument name="key" value="#form.key#">
                 <cfinvokeargument name="value" value="#form.value#">

@@ -28,11 +28,10 @@
             <cfinvoke component="Component/13_Highlight_search_keyword_docx-1" method="search" returnvariable="result">
                 <cfinvokeargument name="searchstring" value="#form.string#">
             </cfinvoke>
-
+            
             <cfoutput><br>#result#</cfoutput>
         </cfif>
     </center>
-
 </body>
 
 </html>

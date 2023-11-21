@@ -21,21 +21,21 @@
             <th>Answer</th>
         </tr>
         <tr>
-            <th><span>res1 = mulitiply(1,2)</span><cfset res1=mulitiply(1,2)></th>
+            <th><span>res1 = mulitiply(1,2)</span><cfset local.res1 = createObject("component", "Component/11_multiple").mulitiply(1,2)></th>
             <td>
-                <cfdump var="#res1#">
+                <cfdump var="#local.res1#">
             </td>
         </tr>
         <tr>
-            <th><span>res2 = mulitiply(1,2,3)</span><cfset res2=mulitiply(1,2,3)></th>
+            <th><span>res2 = mulitiply(1,2,3)</span><cfset local.res2 = createObject("component", "Component/11_multiple").mulitiply(1,2,3)></th>
             <td>
-                <cfdump var="#res2#">
+                <cfdump var="#local.res2#">
             </td>
         </tr>
         <tr>
-            <th><span>res3 = mulitiply(1,2,3,4)</span><cfset res3=mulitiply(1,2,3,4)></th>
+            <th><span>res3 = mulitiply(1,2,3,4)</span><cfset local.res3 = createObject("component", "Component/11_multiple").mulitiply(1,2,3,4)></th>
             <td>
-                <cfdump var="#res3#">
+                <cfdump var="#local.res3#">
             </td>
         </tr>
     </table>

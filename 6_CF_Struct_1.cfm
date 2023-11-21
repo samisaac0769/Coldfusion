@@ -32,7 +32,7 @@ Create a structure in ColdFusion with the values from the text box. The text ent
             <p id="error"></p>
         </form>
 
-        <cfif IsDefined("form.key") and IsDefined("form.value")>
+        <cfif structKeyExists(form, "key") and structKeyExists(form, "value")>
                     
 
         <cfinvoke component="Component/6_CF_Struct_1" method="matchkeyandvalue" returnvariable="keyvalue">

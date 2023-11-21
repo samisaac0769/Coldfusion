@@ -63,26 +63,26 @@ Use cfcase to do this functionality.</h3>
             <p id="error"></p>
         </form>
 
-        <cfif isDefined("form.grade")>
+        <cfif structKeyExists(form, "grade")>
             <cfset inputvalue=form.grade>
-                <cfif isDefined("form.error") && form.error neq "none">
+                <cfif structKeyExists(form, "error") && form.error neq "none">
                     <cfreturn false>
-                        <cfelse>
-                            <cfswitch expression="#inputvalue#">
-                                <cfcase value="5">
-                                    <h2 style="color:green;">Your Grade is Very good</h2>
-                                </cfcase>
-                                <cfcase value="4">
-                                    <h2>Your Grade is good</h2>
-                                </cfcase>
-                                <cfcase value="3">
-                                    <h2>Your Grade is fair</h2>
-                                </cfcase>
-                                <cfcase value="1,2">
-                                    <h2>Your Grade is Ok.</h2>
-                                </cfcase>
-                                <cfdefaultcase>You entered the wrong Input</cfdefaultcase>
-                            </cfswitch>
+                <cfelse>
+                    <cfswitch expression="#inputvalue#">
+                        <cfcase value="5">
+                            <h2 style="color:green;">Your Grade is Very good</h2>
+                        </cfcase>
+                        <cfcase value="4">
+                            <h2>Your Grade is good</h2>
+                        </cfcase>
+                        <cfcase value="3">
+                            <h2>Your Grade is fair</h2>
+                        </cfcase>
+                        <cfcase value="1,2">
+                            <h2>Your Grade is Ok.</h2>
+                        </cfcase>
+                        <cfdefaultcase>You entered the wrong Input</cfdefaultcase>
+                    </cfswitch>
                 </cfif>
         </cfif>
     </div>

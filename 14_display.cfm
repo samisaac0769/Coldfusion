@@ -9,9 +9,8 @@
 </head>
 <body>
     <cfset local.imgid = id>
-    <cfquery datasource="MyColdfusiontask" name="singleimg">
-    select *from imglist where id = #local.imgid#;
-    </cfquery>
+        <cfset local.thumpnail = createObject("component", "Component/14_upload").displayDetails(id='#local.imgid#')>
+    
     <center>
         <table>
             <tr>
@@ -19,7 +18,7 @@
                 <th>Description</th>
                 <th>Image</th>
             </tr>
-            <cfoutput query="singleimg">
+            <cfoutput query="local.thumpnail">
                 <tr>
                     <td>#imgname#</td>
                     <td>#discreption#</td>

@@ -7,13 +7,10 @@
         <link href="css/cf.css" rel="stylesheet">
   </head>
   <body>
-    <cfquery datasource="MyColdfusiontask" name="thumpnail">
-      select *from imglist;
-    </cfquery>
+    <cfset local.thumpnail = createObject("component", "Component/14_upload").thumpnail()>
 
-
-    <cfif thumpnail.recordCount GT 0>
-      <cfset local.id = thumpnail.id>
+    <cfif local.thumpnail.recordCount GT 0>
+      <cfset local.id = local.thumpnail.id>
       <center>
           <table>
               <tr>
@@ -21,12 +18,12 @@
               <th>Image Name</th>
               <th>Image</th>
               </tr>
-              <cfoutput query="thumpnail">
+              <cfoutput query="local.thumpnail">
               <tr>
                   <td>#imgname#</td>
                   <td>
                       <form action="14_display.cfm" method="post"> 
-                          <input type="hidden"name="id" value="#thumpnail.id#">
+                          <input type="hidden"name="id" value="#local.thumpnail.id#">
                           <button class="img-btn" action="" method="post"><img width="20" height="20" src="assets/#imgpath#" /></button>
                       </form>
                   </td>  

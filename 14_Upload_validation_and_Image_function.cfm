@@ -32,8 +32,6 @@ While clicking on the image name, it should redirect the user to details page wh
         </form>
 
         <cfif structKeyExists(form, "imageName") and structKeyExists(form, "description") and structKeyExists(form, "imageFile")>
-            <cfdump var="#form.imageFile#" >
-            <cfabort>
             <cfset local.path = ExpandPath("/Coldfusion/assets")>
 
             <cfif structKeyExists(form, "imageFile")>
@@ -45,9 +43,11 @@ While clicking on the image name, it should redirect the user to details page wh
 
             <cfset local.image = cffile.clientFile>
 
-            <cfquery datasource="MyColdfusiontask" name="list">
+            <cfset local.insertq = createObject("component","Component/14_upload").init(imgname='#form.imageName#',discription='#form.description#',imageN='#local.image#')>
+
+            <!---<cfquery datasource="MyColdfusiontask" name="list">
                 insert into imglist (imgname , discreption, imgpath) values('#form.imageName#', '#form.description#', '#local.image#');
-            </cfquery>
+            </cfquery>--->
             </cfif>
             <cflocation url="14_process_thumnail.cfm" addtoken="no">
         </cfif>

@@ -24,16 +24,14 @@
             <input type="number" placeholder="enter the number" name="nthplace">
             <button>Get the Date</button>
             </from><br><br>
-            <cfquery datasource="MyColdfusiontask" name="namelist">
-                SELECT * FROM namelist;
-            </cfquery>
+            <cfset local.nameList = createObject("component","Component/12_nth_row").namelist()>
             <table>
                 <tr>
                     <th>First Name</th>
                     <th>Last Name</th>
                 </tr>
                 <tr style="border:1px solid">Data from DB</tr>
-                <cfoutput query="namelist">
+                <cfoutput query="local.nameList">
                     <tr>
                         <td>#FirstName#</td>
                         <td>#LastName#</td>
@@ -42,42 +40,30 @@
             </table>
             <br><br>
 
-            <cfif isDefined("form.nthplace")>
+            <cfif structKeyExists(form, "nthplace")>
                 <cfif #form.nthplace# eq "">
                     <span> dai enter the value da</span>
+                <cfelse>
+                    <cfset local.nthRow = createObject("component","Component/12_nth_row").nthrow(nthplace = '#form.nthplace#')>
+                    <cfif local.nthRow.recordCount GT 0>
+                        <table>
+                            <tr style="border:1px solid">The Answer is</tr>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                            </tr>
+                            <cfoutput query="local.nthRow">
+                            <tr>    
+                                <td>#FirstName#</td>
+                                <td>#LastName#</td>
+                            </tr>
+                            </cfoutput>
+                        </table>
                     <cfelse>
-                        <cfquery datasource="MyColdfusiontask" name="namelist1">
-                            SELECT * FROM namelist ORDER BY (SELECT NULL) OFFSET <cfqueryparam value="#form.nthplace#" cfsqltype="cf_sql_integer">-1 ROWS fetch next 1
-                            row only;
-                        </cfquery>
-                        <cfif namelist1.recordCount GT 0>
-                            
-                                <table>
-                                    <tr style="border:1px solid">The Answer is</tr>
-                                    <tr>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                    </tr>
-                                    <cfoutput query="namelist1">
-                                    <tr>
-                                        
-                                        <td>#FirstName#</td>
-                                        <td>#LastName#</td>
-                                        
-                                    </tr>
-                                    </cfoutput>
-                                </table>
-                            
-                            <cfelse>
-                                <cfoutput >The query did not return results.</cfoutput>    
-                                
-                        </cfif>
+                        <cfoutput >The query did not return results.</cfoutput>    
+                    </cfif>
                 </cfif>
             </cfif>
     </center>
-
-
-
 </body>
-
 </html>

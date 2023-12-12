@@ -24,9 +24,7 @@
             <input class="logout" type="submit" name="logout" value="Output" >
             </form>
 
-            <cfif structKeyExists(form, "logout" )>
-                <cfset data=comp.logout()>
-            </cfif>
+
             <div class="container">
                 <div class="admin-list">
                     <div class="add-page">
